@@ -17,8 +17,9 @@ print(A@x)
 # print(bb)
 # solve LP relaxation
 # x = cvx.Variable(n)
-constraints = [A * x <= b, 
-               x >= 0, x <= 1]
+constraints = [cvx.multiply(A, x) <= b,
+               x >= 0,
+               x <= 1]
 
 # objective = cvx.Minimize(c.T @ x)
 # prob = cvx.Problem(objective, constraints)
